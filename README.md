@@ -91,3 +91,14 @@ ssh -i user0-demo.pem ubuntu@[Public DNS]
 ```
 
 On windows using Putty, use the .ppk file instead. TODO: Describe how.
+
+## Security
+By default, machines are created with a firewall rule that only allows traffic from the IP you were on when running the train script. This might very well not be what you need.
+
+If you observe connection timeout issues, this is probably the reason.
+
+Solution:
+* Go to the AWS console. Find your instances under EC2 instances.
+* Under each instance, in the tabs at the bottom, is a link to the security group used. Go to the security group to change the firewall rules.
+* Edit inbound rules - > Add rule -> All traffic, from Anywhere. This affects the security group, so it applies for all the machines you created.
+* 
