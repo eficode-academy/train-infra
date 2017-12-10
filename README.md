@@ -102,3 +102,6 @@ Solution:
 * Under each instance, in the tabs at the bottom, is a link to the security group used. Go to the security group to change the firewall rules.
 * Edit inbound rules - > Add rule -> All traffic, from Anywhere. This affects the security group, so it applies for all the machines you created.
 * 
+## Tagging to avoid deletion
+
+To avoid the lambda cleanup script destroying the instances, add a tag `Status` with value `Prod` to each vm.
